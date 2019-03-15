@@ -27,7 +27,7 @@ public static function create_db() {
 
     global $wpdb;
     $table_name = $wpdb->prefix . "custom_table_name";
-    $plugin_name_db_version = get_option( 'plugin-name_db_version', '1.0' );
+    $plugin_name_db_version = get_option( 'plugin_name_db_version', '1.0' );
 
     if( $wpdb->get_var( "show tables like '{$table_name}'" ) != $table_name ||
         version_compare( $version, '1.0' ) < 0 ) {
@@ -54,7 +54,7 @@ public static function create_db() {
          */
         dbDelta( $sql );
 
-        add_option( 'plugin-name_db_version', $plugin_name_db_version );
+        add_option( 'plugin_name_db_version', $plugin_name_db_version );
 
     }
 
