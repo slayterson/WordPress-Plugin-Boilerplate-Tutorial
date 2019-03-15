@@ -34,7 +34,7 @@ public static function create_db() {
 
         $charset_collate = $wpdb->get_charset_collate();
 
-        $sql[] = "CREATE TABLE " . $wpdb->prefix . "database_table (
+        $sql[] = "CREATE TABLE $table_name (
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             db_field_tinytext tinytext,
             db_field_datetime DEFAULT '0000-00-00 00:00:00',
